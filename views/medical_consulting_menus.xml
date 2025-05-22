@@ -1,0 +1,25 @@
+<odoo>
+    <menuitem id="medical_consulting_menu_root" name="Medical Consulting">
+        <menuitem id="medical_consulting_menu_doctor" name="Doctor">
+            <menuitem 
+                id="medical_consulting_menu_doctor_list" 
+                name="Doctor" 
+                action="action_medical_consulting_doctor"
+            />
+        </menuitem>
+        <menuitem id="medical_consulting_menu_client" name="Client">
+            <menuitem 
+                id="medical_consulting_menu_client_list" 
+                name="Client" 
+                action="action_medical_consulting_client"
+            />
+        </menuitem>
+        <menuitem id="medical_consulting_menu_medication" name="Medication">
+            <menuitem 
+                id="medical_consulting_menu_medication_list" 
+                name="Medication" 
+                action="action_medical_consulting_medication"
+            />
+        </menuitem>
+    </menuitem>
+</odoo>

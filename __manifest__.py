@@ -4,8 +4,10 @@
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',  
-        # 'views/estate_property_offer_views.xml',
-        # 'views/estate_menus.xml'
+        'views/medical_consulting_doctor_views.xml',
+        'views/medical_consulting_client_views.xml',
+        'views/medical_consulting_medication_views.xml',
+        'views/medical_consulting_menus.xml'
     ],
     'author': 'Moi',
     'category': 'Uncategorized',
