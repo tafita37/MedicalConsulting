@@ -37,7 +37,7 @@ The primary objective is to streamline the management of medical consultations a
 
 🔧 Installation instructions :
 
-### Cloner the repository
+### Clone the repository
 ```bash
 git clone https://github.com/tafita37/MedicalConsulting.git
 ```
