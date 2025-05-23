@@ -9,4 +9,83 @@
             </p>
         </field>
     </record>
+
+    <record id="form_medical_consulting_client" model="ir.ui.view">
+        <field name="name">medicalconsulting.client.form</field>
+        <field name="model">medicalconsulting.client</field>
+        <field name="arch" type="xml">
+            <form string="Medical Consulting Client">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="birth_date"/>
+                            <field name="address"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="phone"/>
+                            <field name="email"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Consultations">
+                            <field name="consultation_ids">
+                                <list string="Offer">
+                                    <field name="doctor_id"/>
+                                    <field name="consultation_date"/>
+                                    <field name="diagnosis"/>
+                                    <field name="total_price"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="form_medical_consulting_consultation" model="ir.ui.view">
+        <field name="name">medicalconsulting.consultation.form</field>
+        <field name="model">medicalconsulting.consultation</field>
+        <field name="arch" type="xml">
+            <form string="Consultation">
+                <sheet>
+                    <group>
+                        <field name="doctor_id"/>
+                        <field name="consultation_date"/>
+                        <field name="diagnosis"/>
+                    </group>
+                    <group>
+                        <field name="consultation_line_ids">
+                            <list>
+                                <field name="medication_id"/>
+                                <field name="quantity"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="form_medical_consulting_consultation_line" model="ir.ui.view">
+        <field name="name">medicalconsulting.consultation.line.form</field>
+        <field name="model">medicalconsulting.consultation.line</field>
+        <field name="arch" type="xml">
+            <form string="Consultation Details">
+                <sheet>
+                    <group>
+                        <field name="medication_id"/>
+                    </group>
+                    <group>
+                        <field name="quantity"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 </odoo>

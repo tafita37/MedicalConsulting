@@ -10,3 +10,5 @@ class Client(models.Model):
     email = fields.Char(string='Email')
     address = fields.Text(string='Address')
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string='Gender')
+
+    consultation_ids=fields.One2many('medicalconsulting.consultation', "client_id", string="Consultations")
