@@ -34,11 +34,17 @@
                     <notebook>
                         <page string="Consultations">
                             <field name="consultation_ids">
-                                <list string="Offer">
+                                <list 
+                                    string="Offer" 
+                                    decoration-danger="state == 'not_processed'" 
+                                    decoration-warning="state == 'in_progress'" 
+                                    decoration-success="state == 'done'"
+                                >
                                     <field name="doctor_id"/>
                                     <field name="consultation_date"/>
                                     <field name="diagnosis"/>
                                     <field name="total_price"/>
+                                    <field name="state"/>
                                 </list>
                             </field>
                         </page>
@@ -53,11 +59,15 @@
         <field name="model">medicalconsulting.consultation</field>
         <field name="arch" type="xml">
             <form string="Consultation">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="not_processed,in_progress,done"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="doctor_id"/>
                         <field name="consultation_date"/>
                         <field name="diagnosis"/>
+                        <field name="state"/>
                     </group>
                     <group>
                         <field name="consultation_line_ids">
